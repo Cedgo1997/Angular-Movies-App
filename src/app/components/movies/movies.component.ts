@@ -14,7 +14,11 @@ export class MoviesComponent implements OnInit {
   constructor(private moviesService: MoviesService) {
 
     this.moviesService.getPopular().subscribe( (resp:any) => {
-      this.populars = resp.results;
+
+      for(let x=0; x<6; x++) {
+        this.populars.push(resp.results[x]);
+      }
+
       console.log(this.populars);
     } )
   }
