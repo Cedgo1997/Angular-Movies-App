@@ -9,13 +9,13 @@ import { Subscribable } from 'rxjs';
 })
 export class MoviesComponent implements OnInit {
   
-  popular:any[] = [];
+  populars:any[] = [];
 
   constructor(private moviesService: MoviesService) {
 
     this.moviesService.getPopular().subscribe( (resp:any) => {
-      this.popular = resp.results;
-      console.log(this.popular);
+      this.populars = resp.results;
+      console.log(this.populars);
     } )
   }
 
