@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { MoviesService } from "src/app/services/movies.service";
-import { Subscribable } from 'rxjs';
 
 @Component({
   selector: "app-movies",
@@ -8,20 +7,27 @@ import { Subscribable } from 'rxjs';
   styleUrls: ["./movies.component.css"],
 })
 export class MoviesComponent implements OnInit {
-  
-  populars:any[] = [];
+  populars: any[] = [];
 
   constructor(private moviesService: MoviesService) {
+    this.getPopulars();
+  }
 
-    this.moviesService.getPopular().subscribe( (resp:any) => {
 
-      for(let x=0; x<6; x++) {
+  /* TO GET THE 6 FIRST POPULAR MOVIES */
+
+  getPopulars() {
+    return this.moviesService.getPopular().subscribe((resp: any) => {
+      for (let x = 0; x < 5; x++) {
         this.populars.push(resp.results[x]);
       }
 
       console.log(this.populars);
-    } )
+    });
   }
+
+
+
 
   ngOnInit() {}
 }

@@ -1,18 +1,19 @@
 <div class="container text-center">
-  <h1>Here goes our films</h1>
+  <h1>Here goes our movies!</h1>
 </div>
 
 <hr />
 
-<div class="card-columns">
-  <div class="card" *ngFor="let popular of populars" >
-    <img src="http://image.tmdb.org/t/p/w500{{ popular.poster_path }}" class="card-img-top" alt="..." />
+<h2>POPULAR MOVIES</h2>
+<div class="grid-card">
+  <div class="card m-2" *ngFor="let popular of populars">
+    <img
+      src="http://image.tmdb.org/t/p/w500{{ popular.poster_path }}"
+      class="card-img-top"
+      alt="..."
+    />
     <div class="card-body">
-      <h5 class="card-title">Card title that wraps to a new line</h5>
-      <p class="card-text">
-        This is a longer card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </p>
+      <h4 class="card-title text-center">{{ popular.title }}</h4>
     </div>
   </div>
 </div>
