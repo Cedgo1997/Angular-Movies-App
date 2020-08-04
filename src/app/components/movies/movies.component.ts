@@ -8,11 +8,12 @@ import { MoviesService } from "src/app/services/movies.service";
 })
 export class MoviesComponent implements OnInit {
   populars: any[] = [];
+  kids: any[] = [];
 
   constructor(private moviesService: MoviesService) {
     this.getPopulars();
+    this.getKids();
   }
-
 
   /* TO GET THE 6 FIRST POPULAR MOVIES */
 
@@ -21,13 +22,18 @@ export class MoviesComponent implements OnInit {
       for (let x = 0; x < 5; x++) {
         this.populars.push(resp.results[x]);
       }
-
-      console.log(this.populars);
     });
   }
 
+  /* TO GET THE 6 FIRST KIDS MOVIES */
 
-
+  getKids() {
+    return this.moviesService.getKids().subscribe((resp: any) => {
+      for (let x = 0; x < 5; x++) {
+        this.kids.push(resp.results[x]);
+      }
+    });
+  }
 
   ngOnInit() {}
 }

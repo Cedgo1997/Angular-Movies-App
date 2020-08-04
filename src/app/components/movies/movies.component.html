@@ -5,15 +5,11 @@
 <hr />
 
 <h2>POPULAR MOVIES</h2>
-<div class="grid-card">
-  <div class="card m-2" *ngFor="let popular of populars">
-    <img
-      src="http://image.tmdb.org/t/p/w500{{ popular.poster_path }}"
-      class="card-img-top"
-      alt="..."
-    />
-    <div class="card-body">
-      <h4 class="card-title text-center">{{ popular.title }}</h4>
-    </div>
-  </div>
-</div>
+
+<app-movie-cards [movies]="populars" ></app-movie-cards>
+
+<hr>
+
+<h2>POPULAR KIDS MOVIES</h2>
+
+<app-movie-cards [movies]="kids" ></app-movie-cards>

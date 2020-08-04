@@ -1,1 +1,12 @@
-<p>movie-cards works!</p>
+<div class="grid-card">
+    <div class="card m-2" *ngFor="let movie of movies">
+      <img
+        src="http://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h4 class="card-title text-center">{{ movie.title }}</h4>
+      </div>
+    </div>
+  </div>
