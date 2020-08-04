@@ -9,18 +9,18 @@ export class MoviesService {
   private apiKey: string = "527d31593527d0b6d65cca79c0370e36";
   private movieUrl: string = "https://api.themoviedb.org/3";
 
-  private actualDate: any = new Date();
+  private gteDate: any= moment().subtract(2, 'months').format('YYYY-MM-DD');
+  private lteDate: any= moment().format('YYYY-MM-DD');
+
 
   constructor(private http: HttpClient) {
 
-console.log(this.actualDate);
-
-  }
+ }
 
 
   getActualMovies() {
     return this.http.get(
-      `${this.movieUrl}/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=${this.apiKey}`
+      `${this.movieUrl}/discover/movie?primary_release_date.gte=${ this.gteDate }&primary_release_date.lte=${ this.lteDate }&api_key=${this.apiKey}`
     );
   }
 

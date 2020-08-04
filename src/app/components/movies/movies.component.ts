@@ -9,10 +9,22 @@ import { MoviesService } from "src/app/services/movies.service";
 export class MoviesComponent implements OnInit {
   populars: any[] = [];
   kids: any[] = [];
+  latest: any[] = [];
 
   constructor(private moviesService: MoviesService) {
     this.getPopulars();
     this.getKids();
+    this.getActualMovies();
+  }
+
+  /* TO GET ACTUAL RELEASES */
+
+  getActualMovies() {
+    return this.moviesService.getActualMovies().subscribe((resp: any) => {
+      for (let x = 0; x < 5; x++) {
+        this.latest.push(resp.results[x]);
+      }
+    });
   }
 
   /* TO GET THE 6 FIRST POPULAR MOVIES */
