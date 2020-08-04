@@ -1,1 +1,14 @@
-<p>search works!</p>
+<h1 class="text-center m-2">Find want you want!</h1>
+
+<!-- HERE GOES SEARCHBAR -->
+
+<div class="row">
+  <div class="col">
+    <input #term type="text" class="form-control" placeholder="Search Movie" />
+  </div>
+</div>
+
+<!-- HERE GOES ALL THE MOVIES -->
+<div class="container mt-4">
+  <app-movie-cards [movies]="movies"></app-movie-cards>
+</div>
