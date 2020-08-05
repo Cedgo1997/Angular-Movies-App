@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class ImagePipe implements PipeTransform {
   transform(movie: any, poster: boolean = false): any {
     if (!movie) {
-      return "assets/no_image.jpg";
+      return "assets/no_image.png";
     }
     let url = "http://image.tmdb.org/t/p/w500";
 
@@ -20,7 +20,7 @@ export class ImagePipe implements PipeTransform {
       if (movie.poster_path) {
         return url + movie.poster_path;
       } else {
-        return "assets/no_image.jpg";
+        return "assets/no_image.png";
       }
     }
   }

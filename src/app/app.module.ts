@@ -16,6 +16,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
 
 /* my PIPES */
 import { ImagePipe } from './pipes/image.pipe';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ImagePipe } from './pipes/image.pipe';
     MovieCardsComponent,
     LoadingComponent,
     ImagePipe,
+    MovieComponent,
   ],
   imports: [
     BrowserModule,
