@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { MovieCardsComponent } from './components/movie-cards/movie-cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+
+/* my PIPES */
 import { ImagePipe } from './pipes/image.pipe';
 
 @NgModule({
