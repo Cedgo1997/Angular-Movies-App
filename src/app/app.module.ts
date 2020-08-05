@@ -12,6 +12,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { MovieCardsComponent } from './components/movie-cards/movie-cards.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { ImagePipe } from './pipes/image.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MovieCardsComponent } from './components/movie-cards/movie-cards.compon
     NavbarComponent,
     HomeComponent,
     SearchComponent,
-    MovieCardsComponent
+    MovieCardsComponent,
+    LoadingComponent,
+    ImagePipe
   ],
   imports: [
     BrowserModule,

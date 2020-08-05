@@ -1,21 +1,29 @@
-<div class="container text-center animate__animated animate__fadeIn">
-  <h1>Here goes our movies!</h1>
+<div class="jumbotron jumbotron-fluid animate__animated animate__fadeIn">
+  <div class="container">
+    <h1 class="display-4"> <i class="fa fa-film"></i> Movies App</h1>
+    <p class="lead">A page made just for learning purposes, using TheMovieDatabase API.</p>
+  </div>
 </div>
 
 <hr />
 
-<h2 class="animate__animated animate__fadeIn">LATEST RELEASES</h2>
+<!-- LOADING ALERT -->
+<app-loading *ngIf="loading" ></app-loading>
 
-<app-movie-cards [movies]="latest"></app-movie-cards>
+<!-- MOVIES -->
+
+<h2 class="mt-4 animate__animated animate__fadeIn">LATEST RELEASES</h2>
+
+<app-movie-cards [movies]="latest" *ngIf="!loading"></app-movie-cards>
 
 <hr />
 
-<h2 class="animate__animated animate__fadeIn">POPULAR MOVIES</h2>
+<h2 class="mt-4 animate__animated animate__fadeIn">POPULAR MOVIES</h2>
 
-<app-movie-cards [movies]="populars"></app-movie-cards>
+<app-movie-cards [movies]="populars" *ngIf="!loading"></app-movie-cards>
 
 <hr />
 
-<h2 class="animate__animated animate__fadeIn">POPULAR KIDS MOVIES</h2>
+<h2 class="mt-4 animate__animated animate__fadeIn">POPULAR KIDS MOVIES</h2>
 
-<app-movie-cards [movies]="kids"></app-movie-cards>
+<app-movie-cards [movies]="kids" *ngIf="!loading"></app-movie-cards>

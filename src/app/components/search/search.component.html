@@ -1,14 +1,18 @@
-<h1 class="text-center m-2 animate__animated animate__fadeIn">Find want you want!</h1>
+<h1 class="text-center m-2 animate__animated animate__fadeIn">
+  Find want you want!
+</h1>
 
 <!-- HERE GOES SEARCHBAR -->
 
 <div class="row">
-  <div class="col">
+  <div class="col m-4">
     <input #term type="text" class="form-control" placeholder="Search Movie" />
   </div>
 </div>
 
+<!-- LOADING ALERT -->
+
+<app-loading *ngIf="loading"></app-loading>
+
 <!-- HERE GOES ALL THE MOVIES -->
-<div class="container mt-4">
-  <app-movie-cards [movies]="movies"></app-movie-cards>
-</div>
+<app-movie-cards [movies]="movies"></app-movie-cards>
