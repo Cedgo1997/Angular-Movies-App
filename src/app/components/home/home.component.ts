@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   getActualMovies() {
     return this.moviesService.getActualMovies().subscribe((resp: any) => {
-      for (let x = 0; x < 5; x++) {
+      for (let x = 0; x < 15; x++) {
         this.latest.push(resp.results[x]);
         this.loading = false;
       }

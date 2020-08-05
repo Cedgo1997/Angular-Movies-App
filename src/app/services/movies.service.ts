@@ -13,10 +13,15 @@ export class MoviesService {
   private lteDate: any = moment().format("YYYY-MM-DD");
 
   constructor(private http: HttpClient) {
+
   }
 
-  getAllMovies(text:string) {
-    if(text === '') {
+  getMovie(id: string) {
+    return this.http.get(`${this.movieUrl}/movie/${id}?api_key=${this.apiKey}`);
+  }
+
+  getAllMovies(text: string) {
+    if (text === "") {
       return;
     }
     return this.http.get(

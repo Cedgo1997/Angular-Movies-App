@@ -1,1 +1,20 @@
-<p>movie works!</p>
+<h1 class="mt-4 ml-3" > {{movie.title}} </h1>
+
+<div class="row mt-5 ml-3">
+  <div class="col-md-5">
+    <img src="{{ movie | image:true }}" class="img-thumbnail img-fluid" />
+  </div>
+
+
+  <div class="col-md-7">
+      <h3>Description</h3>
+      <hr>
+      <p class="text-justify"> {{ movie.overview }} </p>
+      <p>
+          {{ movie.tagline }}
+      </p>
+      <p> <strong>Popularity: </strong> <span>{{ movie.popularity }}</span></p>
+  </div>
+
+</div>
+
