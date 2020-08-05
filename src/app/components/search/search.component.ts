@@ -11,12 +11,11 @@ export class SearchComponent implements OnInit {
   loading: boolean;
 
   constructor(private moviesService: MoviesService) {
-    this.getAllMovies();
-    this.loading = true;
   }
 
-  getAllMovies() {
-    return this.moviesService.getAllMovies().subscribe((resp: any) => {
+  getAllMovies(text:string) {
+    this.loading = true;
+    return this.moviesService.getAllMovies(text).subscribe((resp: any) => {
       this.movies = resp.results;
       this.loading = false;
     });

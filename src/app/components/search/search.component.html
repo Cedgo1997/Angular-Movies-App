@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col m-4">
-    <input #term type="text" class="form-control" placeholder="Search Movie" />
+    <input #term (keyup.enter)="getAllMovies(term.value)" type="text" class="form-control" placeholder="Search Movie" />
   </div>
 </div>
 

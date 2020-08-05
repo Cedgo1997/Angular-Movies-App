@@ -13,12 +13,14 @@ export class MoviesService {
   private lteDate: any = moment().format("YYYY-MM-DD");
 
   constructor(private http: HttpClient) {
-    this.getAllMovies();
   }
 
-  getAllMovies() {
+  getAllMovies(text:string) {
+    if(text === '') {
+      return;
+    }
     return this.http.get(
-      `${this.movieUrl}/discover/movie?api_key=${this.apiKey}`
+      `${this.movieUrl}/search/movie?query=${text}&api_key=${this.apiKey}`
     );
   }
 
