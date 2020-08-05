@@ -1,14 +1,32 @@
-<div class="grid-card">
-    <div class="card m-2" *ngFor="let movie of movies">
-      <img
-        src="{{ movie | image }}"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h4 class="card-title text-center">{{ movie.title }}</h4>
-      </div>
+<!-- <div class="grid-card">
+  <div class="card m-2" *ngFor="let movie of movies">
+    <img src="{{ movie | image }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h4 class="card-title text-center">{{ movie.title }}</h4>
+    </div>
 
-      <button class="btn btn-outline-primary" (click)="viewMovie(movie)" > View more </button>
+    <button class="btn btn-outline-primary" (click)="viewMovie(movie)">
+      View more
+    </button>
+  </div>
+</div> -->
+
+<div class="card-columns">
+  <div class="card" *ngFor="let movie of movies">
+    <img
+      src="{{ movie | image }}"
+      class="card-img-top"
+      alt="{{
+      movie.title
+      }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.title }}</h5>
+      <p class="card-text">{{ movie.overview | slice: 0:200 }}...</p>
+      <button
+        class="btn btn-outline-primary btn-block"
+        (click)="viewMovie(movie)"
+      > View more </button>
     </div>
   </div>
+</div>
