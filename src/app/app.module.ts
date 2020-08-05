@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
-import { MoviesComponent } from './components/movies/movies.component';
 import { MovieCardsComponent } from './components/movie-cards/movie-cards.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { MovieCardsComponent } from './components/movie-cards/movie-cards.compon
     NavbarComponent,
     HomeComponent,
     SearchComponent,
-    MoviesComponent,
     MovieCardsComponent
   ],
   imports: [

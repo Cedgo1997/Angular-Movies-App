@@ -1,1 +1,21 @@
-<app-movies></app-movies>
+<div class="container text-center">
+    <h1>Here goes our movies!</h1>
+  </div>
+  
+  <hr />
+  
+  <h2>LATEST RELEASES</h2>
+  
+  <app-movie-cards [movies]="latest" ></app-movie-cards>
+  
+  <hr>
+  
+  <h2>POPULAR MOVIES</h2>
+  
+  <app-movie-cards [movies]="populars" ></app-movie-cards>
+  
+  <hr>
+  
+  <h2>POPULAR KIDS MOVIES</h2>
+  
+  <app-movie-cards [movies]="kids" ></app-movie-cards>
