@@ -1,18 +1,27 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: 'image'
+  name: "image",
 })
 export class ImagePipe implements PipeTransform {
+  transform(movie: any, poster: boolean = false): any {
+    if (!movie) {
+      return "assets/no_image.jpg";
+    }
+    let url = "http://image.tmdb.org/t/p/w500";
 
-  transform(movie: any): any {
-    if ( movie.poster_path ) {
-      return movie.poster_path
-    } else if (movie.backdrop_path) {
-      return movie.backdrop_path
+    if (poster) {
+      return url + movie.poster_path;
+    }
+
+    if (movie.backdrop_path) {
+      return url + movie.backdrop_path;
     } else {
-      return "assets/no_image.jpg"
+      if (movie.poster_path) {
+        return url + movie.poster_path;
+      } else {
+        return "assets/no_image.jpg";
+      }
     }
   }
-
 }

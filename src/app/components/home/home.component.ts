@@ -23,11 +23,11 @@ export class HomeComponent implements OnInit {
 
   getActualMovies() {
     return this.moviesService.getActualMovies().subscribe((resp: any) => {
-      console.log(resp.results);
       for (let x = 0; x < 5; x++) {
         this.latest.push(resp.results[x]);
         this.loading = false;
       }
+      console.log(this.latest[0].backdrop_path);
     });
   }
 

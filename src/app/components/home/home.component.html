@@ -1,29 +1,96 @@
 <div class="jumbotron jumbotron-fluid animate__animated animate__fadeIn">
   <div class="container">
-    <h1 class="display-4"> <i class="fa fa-film"></i> Movies App</h1>
-    <p class="lead">A page made just for learning purposes, using TheMovieDatabase API.</p>
+    <h1 class="display-4"><i class="fa fa-film"></i> Movies App</h1>
+    <p class="lead">
+      A page made just for learning purposes, using TheMovieDatabase API.
+    </p>
   </div>
 </div>
 
 <hr />
 
 <!-- LOADING ALERT -->
-<app-loading *ngIf="loading" ></app-loading>
+<app-loading *ngIf="loading"></app-loading>
 
 <!-- MOVIES -->
 
-<h2 class="mt-4 animate__animated animate__fadeIn">LATEST RELEASES</h2>
+<h2 class="mt-4 animate__animated animate__fadeIn text-center">LATEST RELEASES</h2>
 
-<app-movie-cards [movies]="latest" *ngIf="!loading"></app-movie-cards>
+<div class="container container-fluid">
+  <div class="row" *ngIf="latest" >
+    <div class="col-sm-6">
+
+      <div class="row">
+        <div
+          class="col-md-12 div-pic-1"
+          [ngStyle]="{
+            'background-image':
+              'url( '+ (latest[0] | image) +' )'
+          }"
+        ></div>
+      </div>
+
+      <div class="row">
+        <div
+          class="col-md-6 div-pic-2"
+          [ngStyle]="{
+            'background-image':
+              'url( '+ (latest[1] | image) +' )'
+          }"
+        ></div>
+
+        <div
+          class="col-md-6 div-pic-2"
+          [ngStyle]="{
+            'background-image':
+              'url( '+ (latest[2] | image) +' )'
+          }"
+        ></div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="row">
+        <div
+          class="col-md-6 div-pic-2"
+          [ngStyle]="{
+            'background-image':
+              'url( '+ (latest[3] | image) +' )'
+          }"
+        ></div>
+
+        <div
+          class="col-md-6 div-pic-2"
+          [ngStyle]="{
+            'background-image':
+              'url( '+ (latest[4] | image) +' )'
+          }"
+        ></div>
+      </div>
+
+      <div class="row">
+        <div
+          class="col-md-12 div-pic-1"
+          [ngStyle]="{
+            'background-image':
+              'url( '+ (latest[5] | image) +' )'
+          }"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-movie-cards [movies]="latest" *ngIf="!loading"></app-movie-cards> -->
 
 <hr />
 
-<h2 class="mt-4 animate__animated animate__fadeIn">POPULAR MOVIES</h2>
+<h2 class="mt-4 animate__animated animate__fadeIn text-center">POPULAR MOVIES</h2>
 
 <app-movie-cards [movies]="populars" *ngIf="!loading"></app-movie-cards>
 
 <hr />
 
-<h2 class="mt-4 animate__animated animate__fadeIn">POPULAR KIDS MOVIES</h2>
+<h2 class="mt-4 animate__animated animate__fadeIn text-center">POPULAR KIDS MOVIES</h2>
 
 <app-movie-cards [movies]="kids" *ngIf="!loading"></app-movie-cards>

@@ -25,7 +25,7 @@ import { ImagePipe } from './pipes/image.pipe';
     SearchComponent,
     MovieCardsComponent,
     LoadingComponent,
-    ImagePipe
+    ImagePipe,
   ],
   imports: [
     BrowserModule,
