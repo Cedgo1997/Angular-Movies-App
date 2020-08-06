@@ -16,7 +16,7 @@ export class MovieCardsComponent implements OnInit {
 
   viewMovie(movie:any) {
     let id:number = movie.id;
-    this._router.navigate(['/movie', id ]);
+    this._router.navigate(['/movie', id]);
   }
 
   ngOnInit() {

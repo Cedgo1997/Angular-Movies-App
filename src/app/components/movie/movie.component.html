@@ -2,25 +2,27 @@
 
 <div class="container" *ngIf="!loading">
   <h1 class="mt-4 ml-3 animate__animated animate__fadeIn">{{ movie.title }}</h1>
-
+  
   <div class="row mt-5 ml-3 animate__animated animate__fadeIn">
     <div class="col-md-5">
       <img src="{{ movie | image: true }}" class="img-thumbnail img-fluid" />
     </div>
-
+    
     <div class="col-md-7 animate__animated animate__fadeIn">
       <h3>Description</h3>
       <hr />
       <p class="text-justify">{{ movie.overview }}</p>
-      <p>
+      <q>
         {{ movie.tagline }}
-      </p>
+      </q>
+      <hr>
       <p>
         <strong>Popularity: </strong> <span>{{ movie.popularity }}</span>
       </p>
       <p>
-        <strong>Vote average: </strong> <span>{{ movie.vote_average }}</span>
+        <strong>Vote average: </strong> <span>{{ movie.vote_average }} / 10  </span>
       </p>
+      <button class="btn btn-danger" [routerLink]="['/home']" >Back</button>
     </div>
   </div>
 </div>
