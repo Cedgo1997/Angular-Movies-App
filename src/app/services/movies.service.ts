@@ -6,7 +6,7 @@ import * as moment from "moment";
   providedIn: "root",
 })
 export class MoviesService {
-  private apiKey: string = "527d31593527d0b6d65cca79c0370e36";
+  private apiKey: string = "PUT HERE YOUR API KEY";
   private movieUrl: string = "https://api.themoviedb.org/3";
 
   private gteDate: any = moment().subtract(2, "months").format("YYYY-MM-DD");
