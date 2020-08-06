@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 /* my MODULES */
 import  { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 /* my COMPONENTS */
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -33,7 +34,8 @@ import { MovieComponent } from './components/movie/movie.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
