@@ -11,6 +11,8 @@ export class MovieComponent implements OnInit {
 
   constructor( private _route:ActivatedRoute, private moviesService:MoviesService ) {
 
+    this.loading = true;
+
     this._route.params.subscribe( (params) => {
        this.getMovie(params['id']);
     } )
@@ -19,10 +21,12 @@ export class MovieComponent implements OnInit {
    }
 
    movie:any;
+   loading:boolean;
 
   getMovie(id:string) {
     this.moviesService.getMovie(id).subscribe(movie => {
-      this.movie = movie; 
+      this.movie = movie;
+      this.loading = false; 
       console.log(movie);
     })
   }
